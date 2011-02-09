@@ -1,0 +1,5 @@
+.nested-fields
+  = f.input :name
+  = f.input :description
+  = f.input :done, :as => :boolean
+  = link_to_remove_association "remove task", f

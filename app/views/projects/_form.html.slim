@@ -1,0 +1,10 @@
+= simple_form_for @project do |f|
+  = f.input :name
+
+  h3 Tasks
+  #tasks
+    = simple_fields_for :tasks do |task|
+      = render 'task_fields', :f => task
+    .links
+      = link_to_add_association 'add task', f, :tasks
+  = f.button :submit
