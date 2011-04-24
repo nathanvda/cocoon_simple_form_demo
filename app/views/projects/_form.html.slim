@@ -7,4 +7,10 @@
       = render 'task_fields', :f => task
     .links
       = link_to_add_association 'add task', f, :tasks
+  h3 People
+  #people
+    = f.simple_fields_for :people do |person|
+      = render 'person_fields', :f => person
+    .links
+      = link_to_add_association 'add person', f, :people
   = f.button :submit

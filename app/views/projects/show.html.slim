@@ -4,14 +4,29 @@ p
   b Name:
   = @project.name
 
+
+p
+  A project has many tasks, and many people as well. For sake of the example, we asumme people only work on one project.
+  I will provide an example later where a person can work on many projects as well.
+
 h3 Tasks
 
-.table
+table
   -@project.tasks.each do |task|
     tr
       td= task.name
       td= task.description
       td= task.done
+
+
+h3 People
+
+table
+  -@project.people.each do |person|
+    tr
+      td= person.name
+      td= person.role
+      td= person.description
 
 
 = link_to 'Edit', edit_project_path(@project)

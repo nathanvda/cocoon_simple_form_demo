@@ -1,16 +1,43 @@
 $(document).ready(function() {
 
+  function replace_in_content(content, regexp_str, with_str) {
+      reg_exp = new RegExp(regexp_str);
+      content.replace(reg_exp, with_str)
+  }
+
+
   $('.add_fields').live('click', function() {
     var assoc   = $(this).attr('data-association');
-    var content = $(this).siblings('#' + assoc + '_fields_template').html();
+    var assocs  = $(this).attr('data-associations');
+    var content = $(this).attr('data-template');
+    var insertionPosition = $(this).attr('data-association-insertion-position');
+    var insertionNode = $(this).attr('data-association-insertion-node');
     var regexp_braced = new RegExp('\\[new_' + assoc + '\\]', 'g');
+    var regexp_underscord = new RegExp('_new_' + assoc + '_', 'g');
     var new_id  = new Date().getTime();
+    var newcontent_braced = '[' + new_id + ']';
+    var newcontent_underscord = '_' + new_id + '_';
     var new_content = content.replace(regexp_braced, '[' + new_id + ']');
     if (new_content == content) {
-        regexp_braced = new RegExp('\\[new_' + assoc + 's\\]', 'g');
+        regexp_braced = new RegExp('\\[new_' + assocs + '\\]', 'g');
+        regexp_underscord = new RegExp('_new_' + assocs + '_', 'g');
         new_content = content.replace(regexp_braced, '[' + new_id + ']');
     }
-    $(this).parent().before(new_content);
+    new_content = new_content.replace(regexp_underscord, newcontent_underscord);
+
+    if (insertionNode) {
+      insertionNode = $(insertionNode);
+    }
+    else {
+      insertionNode = $(this).parent();
+    }
+    
+    if (insertionPosition == 'after'){
+      insertionNode.after(new_content);
+    } else {
+      insertionNode.before(new_content); 
+    }
+    
     return false;
   });
 
@@ -26,3 +53,4 @@ $(document).ready(function() {
   });
 
 });
+
