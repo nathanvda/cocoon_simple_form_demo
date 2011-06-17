@@ -1,14 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+#gem 'rails', '3.0.3'
+gem 'rails', '3.0.8'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-gem 'cocoon', :path => '../cocoon'
+#gem 'cocoon', :path => '../cocoon'
+gem 'cocoon'
 gem 'simple_form'
+
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,4 +35,4 @@ gem 'simple_form'
 # end
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "slim"
-gem "slim-rails"
+gem "slim-rails", :require => false
