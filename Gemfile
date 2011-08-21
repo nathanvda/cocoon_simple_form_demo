@@ -4,10 +4,17 @@ source 'http://rubygems.org'
 #gem 'rails', '3.0.9'
 gem 'rails', '3.1.0.rc4'
 
+gem 'therubyracer'
+
+# Asset template engines
+gem 'sass-rails', "~> 3.1.0.rc"
+gem 'coffee-script'
+gem 'uglifier'
+
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-gem 'cocoon', :path => '../cocoon'
-#gem 'cocoon'
+#gem 'cocoon', :path => '../cocoon'
+gem 'cocoon'
 gem 'simple_form'
 
 gem 'jquery-rails'

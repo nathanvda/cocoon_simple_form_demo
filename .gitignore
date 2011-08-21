@@ -3,3 +3,8 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .rvmrc
+
+
+.sass-cache/
+public/assets
+
