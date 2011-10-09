@@ -13,4 +13,10 @@
       = render 'person_fields', :f => person
     .links
       = link_to_add_association 'add person', f, :people
+  h3 Owner
+  #owner
+    #owner_from_list
+      = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
+    = link_to_add_association 'add a new person as owner', f, :owner
+
   = f.button :submit
