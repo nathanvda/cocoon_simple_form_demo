@@ -1,0 +1,4 @@
+.nested_fields
+  #tag_from_list
+    = f.association :tag, :collection => Tag.all(:order => 'name'), :prompt => 'Choose an existing tag'
+  = link_to_add_association 'create a new tag', f, :tag

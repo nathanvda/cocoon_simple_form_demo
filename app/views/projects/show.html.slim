@@ -6,7 +6,7 @@ p
 
 p
   b Owned by:
-  = @project.owner.try(:name)
+  = (@project.owner ? @project.owner.try(:name) : 'no owner yet')
 
 p
 | A project has many tasks, and many people as well. For sake of the example, we assume people only work on one project.
@@ -30,6 +30,13 @@ table
       td= person.name
       td= person.role
       td= person.description
+
+h3 Tags
+
+table
+  -@project.tags.each do |tag|
+    tr
+      td= tag.name
 
 
 = link_to 'Edit', edit_project_path(@project)

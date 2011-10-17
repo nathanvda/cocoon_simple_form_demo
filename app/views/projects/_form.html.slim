@@ -19,4 +19,10 @@
       = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
     = link_to_add_association 'add a new person as owner', f, :owner
 
+  h3 Tags
+  #tags
+    = f.simple_fields_for :project_tags do |project_tag|
+      = render 'project_tag_fields', :f => project_tag
+    = link_to_add_association 'add a tag', f, :project_tags
+
   = f.button :submit
