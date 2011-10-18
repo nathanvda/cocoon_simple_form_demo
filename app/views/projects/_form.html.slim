@@ -1,18 +1,22 @@
-= simple_form_for @project do |f|
-  = f.input :name
+= simple_form_for @project, :wrapper => 'inline' do |f|
+  = f.input :name, :hint => 'The title of your project'
 
-  h3 Tasks
-  #tasks
-    = f.simple_fields_for :tasks do |task|
-      = render 'task_fields', :f => task
-    .links
-      = link_to_add_association 'add task', f, :tasks
-  h3 People
-  #people
-    = f.simple_fields_for :people do |person|
-      = render 'person_fields', :f => person
-    .links
-      = link_to_add_association 'add person', f, :people
+  fieldset
+    legend Tasks
+    #tasks
+      = f.simple_fields_for :tasks, :wrapper => 'inline' do |task|
+        = render 'task_fields', :f => task
+      .links
+        = link_to_add_association 'add task', f, :tasks
+
+  fieldset
+    legend People
+    #people
+      = f.simple_fields_for :people, :wrapper => 'inline' do |person|
+        = render 'person_fields', :f => person
+      .links
+        = link_to_add_association 'add person', f, :people
+
   h3 Owner
   #owner
     #owner_from_list

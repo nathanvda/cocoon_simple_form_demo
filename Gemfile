@@ -15,7 +15,9 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 #gem 'cocoon', :path => '../cocoon'
 gem 'cocoon'
-gem 'simple_form'
+
+# use master version of simple-form for twitter-bootstrap integration
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
 
 gem 'jquery-rails'
 

@@ -2,14 +2,16 @@
   table
     tr
       td
-        = f.input :name
+        = f.input :name, :wrapper => :inline, :label => false, :hint => 'name the task' do
+          = f.input_field :name, :hint => 'type the name'
       td
-        = f.input :description
+        = f.input :description, :wrapper => :inline, :label => false, :hint => 'describe the task' do
+          = f.input_field :description, :hint => 'type the name'
       td
         = f.input :done, :as => :boolean
       td
         = link_to_remove_association "remove task", f
-  = f.simple_fields_for :sub_tasks do |sub_task|
+  = f.simple_fields_for :sub_tasks, :wrapper => 'inline' do |sub_task|
     = render 'sub_task_fields', :f => sub_task
   .links
     = link_to_add_association 'add sub-task', f, :sub_tasks

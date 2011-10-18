@@ -1,18 +1,27 @@
 p#notice = notice
 
-p
-  b Name:
-  = @project.name
+.alert-message.block-message.warning
+  p
+    | A project has a name, and an owner. It has many tasks, and many people as well.
+    | For sake of the example, we assume people only work on one project. While owners can have many projects.
+    | A project can have many tags. You can link an existing tag, or add a new tag and link to that.
+    |
 
-p
-  b Owned by:
-  = (@project.owner ? @project.owner.try(:name) : 'no owner yet')
+table
+  tr
+    td Name
+    td
+      =@project.name
+  tr
+    td Owned by
+    td
+      = (@project.owner ? @project.owner.try(:name) : 'no owner yet')
 
-p
-| A project has many tasks, and many people as well. For sake of the example, we assume people only work on one project.
-| I will provide an example later where a person can work on many projects as well.
 
 h3 Tasks
+
+p
+  | List all the tasks here
 
 table
   -@project.tasks.each do |task|
