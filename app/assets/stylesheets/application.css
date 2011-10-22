@@ -11,3 +11,29 @@
 #tasks .input {
     margin-left: 10px;
 }
+
+#tasks div.nested-fields table {
+    margin-left: 150px;
+    width: 80%;
+}
+
+#tasks label.boolean.optional {
+    width: 50px;
+}
+
+#tasks input[type="checkbox"] { margin:  8px; }
+
+td.done_column { width: 80px; }
+
+
+.add_fields, .remove_fields { margin-left: 150px; }
+#tasks > .nested-fields > table .remove_fields { margin-left: 0px; line-height: 30px; }
+
+#tasks .clearfix { margin-bottom: 2px; }
+
+#tasks > .nested-fields > .links > a.add_fields { margin-top: 2px; width:100%; display:block; margin-bottom: 20px; }
+#tasks > .links > a.add_fields { margin-top: 20px; width: 100%; display:block; border-top: 1px dashed silver; }
+
+.project-tag-fields { padding: 2px; border: 1px dashed #ddd; }
+
+.sub_tasks { margin-left: 100px; }

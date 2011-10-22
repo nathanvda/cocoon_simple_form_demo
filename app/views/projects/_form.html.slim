@@ -7,7 +7,7 @@
       = f.simple_fields_for :tasks, :wrapper => 'inline' do |task|
         = render 'task_fields', :f => task
       .links
-        = link_to_add_association 'add task', f, :tasks
+        = link_to_add_association 'add task', f, :tasks, :render_options => { :wrapper => 'inline' }
 
   fieldset
     legend People
@@ -15,18 +15,21 @@
       = f.simple_fields_for :people, :wrapper => 'inline' do |person|
         = render 'person_fields', :f => person
       .links
-        = link_to_add_association 'add person', f, :people
+        = link_to_add_association 'add person', f, :people, :render_options => { :wrapper => 'inline' }
 
-  h3 Owner
-  #owner
-    #owner_from_list
-      = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
-    = link_to_add_association 'add a new person as owner', f, :owner
+  fieldset
+   legend Owner
+   #owner
+     #owner_from_list
+       = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
+     = link_to_add_association 'add a new person as owner', f, :owner, :render_options => { :wrapper => 'inline' }
 
-  h3 Tags
-  #tags
-    = f.simple_fields_for :project_tags do |project_tag|
-      = render 'project_tag_fields', :f => project_tag
-    = link_to_add_association 'add a tag', f, :project_tags
+  fieldset
+    legend Tags
+    #tags
+      = f.simple_fields_for :project_tags, :wrapper => 'inline' do |project_tag|
+        = render 'project_tag_fields', :f => project_tag
+      = link_to_add_association 'add a tag', f, :project_tags, :render_options => { :wrapper => 'inline' }
 
-  = f.button :submit
+  .actions
+    = f.button :submit, :disable_with => 'Please wait ...'

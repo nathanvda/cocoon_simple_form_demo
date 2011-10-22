@@ -7,11 +7,12 @@
       td
         = f.input :description, :wrapper => :inline, :label => false, :hint => 'describe the task' do
           = f.input_field :description, :hint => 'type the name'
-      td
+      td.done_column
         = f.input :done, :as => :boolean
       td
         = link_to_remove_association "remove task", f
-  = f.simple_fields_for :sub_tasks, :wrapper => 'inline' do |sub_task|
-    = render 'sub_task_fields', :f => sub_task
-  .links
-    = link_to_add_association 'add sub-task', f, :sub_tasks
+  .sub_tasks
+    = f.simple_fields_for :sub_tasks, :wrapper => 'inline' do |sub_task|
+      = render 'sub_task_fields', :f => sub_task
+    .links
+      = link_to_add_association 'add sub-task', f, :sub_tasks, :render_options => { :wrapper => 'inline' }
