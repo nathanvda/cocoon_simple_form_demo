@@ -1,31 +1,34 @@
 = simple_form_for @project, :wrapper => 'inline' do |f|
   = f.input :name, :hint => 'The title of your project'
 
-  fieldset
-    legend Tasks
-    #tasks
+  ul.tabs
+    li.active
+      = link_to 'Tasks (:has_many --nested)', '#tasks'
+    li
+      = link_to 'People (:has_many)', '#people'
+    li
+      = link_to 'Owner (:belongs_to)', '#owner'
+    li
+      = link_to 'Tags (:has_many :through)', '#tags'
+
+  .tab-content
+    #tasks.active
       = f.simple_fields_for :tasks, :wrapper => 'inline' do |task|
         = render 'task_fields', :f => task
       .links
         = link_to_add_association 'add task', f, :tasks, :render_options => { :wrapper => 'inline' }
 
-  fieldset
-    legend People
     #people
       = f.simple_fields_for :people, :wrapper => 'inline' do |person|
         = render 'person_fields', :f => person
       .links
         = link_to_add_association 'add person', f, :people, :render_options => { :wrapper => 'inline' }
 
-  fieldset
-   legend Owner
-   #owner
-     #owner_from_list
-       = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
-     = link_to_add_association 'add a new person as owner', f, :owner, :render_options => { :wrapper => 'inline' }
+    #owner
+      #owner_from_list
+        = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
+      = link_to_add_association 'add a new person as owner', f, :owner, :render_options => { :wrapper => 'inline' }
 
-  fieldset
-    legend Tags
     #tags
       = f.simple_fields_for :project_tags, :wrapper => 'inline' do |project_tag|
         = render 'project_tag_fields', :f => project_tag
