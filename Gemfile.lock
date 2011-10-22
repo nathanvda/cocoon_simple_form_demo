@@ -41,7 +41,7 @@ GEM
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
-    cocoon (1.0.13)
+    cocoon (1.0.14)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
