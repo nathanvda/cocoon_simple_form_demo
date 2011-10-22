@@ -5,20 +5,29 @@
 This is a small demo that shows cocoon in action together with [slim](https://github.com/stonean/slim)
 and [simple_form](https://github.com/plataformatec/simple_form).
 
-Cocoon is formbuilder-agnostic, so it works with standard Rails, or Formtastic or simple_form.
+Cocoon itself is formbuilder-agnostic, so it works with standard Rails form-builder, Formtastic or simple_form.
 
 
 ## Notes
 
-Formtastic is easier to start with, because it has a default css. Instead of slapping my own css
-over the application, i formatted the forms very basically using tables. That is ugly as hell, i know,
-but it was the fastest way to get it rolling (for now).
+Formtastic is easier to start with, because it has a default css.
+
+In this project I aimed to show that 1) `simple_form` works, and 2) its customisability, which allows it to be used perfectly
+together with `twitter-bootstrap`.
+While the layout is far from ideal, it is merely intended as a show-case, and the main purpose was to show that it is functioning.
 
 
-## To Do
+## Demonstrated relations
 
-* add more relation-types: ...
-* add a nicer skin
+In this project my main intention was to demonstrate how one could solve nested forms, using `cocoon` for different types of relations.
+The demonstrated relations in this project are:
+
+* a project `:has_many` tasks
+* a task `:has_many` sub-tasks (double nested relation)
+* a project has an owner (`:belongs_to`). Where the owner is either selected from a list, or created.
+* a project `:has_many` tags `:through` project-tags. Either you select an existing tag, or create and link to a new one. When unlinking from a tag,
+the tag is not deleted, only the link.
+
 
 
 ## Copyright
