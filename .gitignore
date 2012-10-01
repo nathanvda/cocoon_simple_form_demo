@@ -3,7 +3,7 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .rvmrc
-
+.idea
 
 .sass-cache/
 public/assets
