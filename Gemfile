@@ -2,22 +2,22 @@ source 'http://rubygems.org'
 
 #gem 'rails', '3.0.3'
 #gem 'rails', '3.0.9'
-gem 'rails', '3.1.0'
+gem 'rails', '3.2.8'
 
 gem 'therubyracer'
 
 # Asset template engines
-gem 'sass-rails', "~> 3.1.0.rc"
+gem 'sass-rails'
 gem 'coffee-script'
 gem 'uglifier'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-#gem 'cocoon', :path => '../cocoon'
-gem 'cocoon'
+gem 'cocoon', :path => '../cocoon'
+#gem 'cocoon'
 
 # use master version of simple-form for twitter-bootstrap integration
-gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git'
+gem 'simple_form'
 
 gem 'jquery-rails'
 
