@@ -13,8 +13,8 @@ gem 'uglifier'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-gem 'cocoon', :path => '../cocoon'
-#gem 'cocoon'
+#gem 'cocoon', :path => '../cocoon'
+gem 'cocoon', '~> 1.1.0'
 
 # use master version of simple-form for twitter-bootstrap integration
 gem 'simple_form'
