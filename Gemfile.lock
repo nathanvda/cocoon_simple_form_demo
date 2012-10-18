@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/nathanvda/cocoon
+  revision: bbba9dc4c0353ec2c0990dec64c24e56bd6ffe9c
+  specs:
+    cocoon (1.1.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -30,7 +36,6 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     builder (3.0.3)
-    cocoon (1.1.0)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -132,7 +137,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoon (~> 1.1.0)
+  cocoon!
   coffee-script
   jquery-rails
   rails (= 3.2.8)
