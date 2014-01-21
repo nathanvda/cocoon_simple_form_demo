@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 #gem 'rails', '3.0.3'
 #gem 'rails', '3.0.9'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.16'
 
 gem 'therubyracer'
 
