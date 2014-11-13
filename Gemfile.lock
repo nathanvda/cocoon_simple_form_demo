@@ -28,6 +28,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bootstrap-sass (3.2.0.1)
+      sass (~> 3.2)
     builder (3.2.2)
     cocoon (1.2.6)
     coffee-script (2.2.0)
@@ -89,7 +91,7 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    simple_form (3.0.2)
+    simple_form (3.1.0.rc2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     slim (2.0.2)
@@ -132,13 +134,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   cocoon (~> 1.2.0)
   coffee-script
   jquery-rails
   rails (> 4.0.1)
   rspec-rails (>= 2.0.1)
   sass-rails
-  simple_form
+  simple_form (~> 3.1.0rc)
   slim
   slim-rails
   sqlite3-ruby

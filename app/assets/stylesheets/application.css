@@ -3,7 +3,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require bootstrap.min
+ *= require bootstrap
  *= require_tree .
 */
 
@@ -37,3 +37,7 @@ td.done_column { width: 80px; }
 .project-tag-fields { padding: 2px; border: 1px dashed #ddd; }
 
 .sub_tasks { margin-left: 100px; }
+
+td .btn {
+    margin-left: 3px;
+}

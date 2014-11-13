@@ -16,9 +16,10 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'cocoon', '~> 1.2.0'
 
 # use master version of simple-form for twitter-bootstrap integration
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0rc'
 
 gem 'jquery-rails'
+gem 'bootstrap-sass'
 
 # Use unicorn as the web server
 # gem 'unicorn'

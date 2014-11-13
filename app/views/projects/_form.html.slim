@@ -1,38 +1,38 @@
-= simple_form_for @project, :wrapper => 'inline' do |f|
+= simple_form_for @project, html: {class: 'form-horizontal'} do |f|
   = f.input :name, :hint => 'The title of your project'
 
-  ul.tabs
+  ul.nav.nav-tabs role='tablist'
     li.active
-      = link_to 'Tasks (:has_many --nested)', '#tasks'
+      = link_to 'Tasks (:has_many --nested)', '#tasks', data: {toggle: 'tab'}
     li
-      = link_to 'People (:has_many)', '#people'
+      = link_to 'People (:has_many)', '#people', data: {toggle: 'tab'}
     li
-      = link_to 'Owner (:belongs_to)', '#owner'
+      = link_to 'Owner (:belongs_to)', '#owner', data: {toggle: 'tab'}
     li
-      = link_to 'Tags (:has_many :through)', '#tags'
+      = link_to 'Tags (:has_many :through)', '#tags', data: {toggle: 'tab'}
 
   .tab-content
-    #tasks.active
-      = f.simple_fields_for :tasks, :wrapper => 'inline' do |task|
+    #tasks.tab-pane.active role='tabpanel'
+      = f.simple_fields_for :tasks do |task|
         = render 'task_fields', :f => task
       .links
-        = link_to_add_association 'add task', f, :tasks, :render_options => { :wrapper => 'inline' }
+        = link_to_add_association 'add task', f, :tasks
 
-    #people
-      = f.simple_fields_for :people, :wrapper => 'inline' do |person|
+    #people.tab-pane role='tabpanel'
+      = f.simple_fields_for :people do |person|
         = render 'person_fields', :f => person
       .links
-        = link_to_add_association 'add person', f, :people, :render_options => { :wrapper => 'inline' }
+        = link_to_add_association 'add person', f, :people
 
-    #owner
+    #owner.tab-pane role='tabpanel'
       #owner_from_list
-        = f.association :owner, :collection => Person.all(:order => 'name'), :prompt => 'Choose an existing owner'
-      = link_to_add_association 'add a new person as owner', f, :owner, :render_options => { :wrapper => 'inline' }
+        = f.association :owner, collection: Person.order(:name), prompt: 'Choose an existing owner'
+      = link_to_add_association 'add a new person as owner', f, :owner
 
-    #tags
-      = f.simple_fields_for :project_tags, :wrapper => 'inline' do |project_tag|
+    #tags.tab-pane role='tabpanel'
+      = f.simple_fields_for :project_tags do |project_tag|
         = render 'project_tag_fields', :f => project_tag
-      = link_to_add_association 'add a tag', f, :project_tags, :render_options => { :wrapper => 'inline' }
+      = link_to_add_association 'add a tag', f, :project_tags
 
   .actions
     = f.button :submit, :disable_with => 'Please wait ...'
