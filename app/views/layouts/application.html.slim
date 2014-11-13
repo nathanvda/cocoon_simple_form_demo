@@ -24,7 +24,9 @@ body style='padding-top:40px;'
             li
               =link_to "About", root_url
     .container
-      = yield
+      == render :partial => 'shared/flashes'
+      .row
+        == yield
 
     #push
 

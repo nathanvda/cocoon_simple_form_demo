@@ -1,0 +1,9 @@
+.row
+  - flash.each do |name, msg|
+    - flash_type_translation = { 'notice' => 'warning', 'alert' => 'danger', 'success' => 'success'}
+    - alert_class_name = flash_type_translation[name]
+    .alert class="alert-#{alert_class_name || 'info'}"
+      button.close type="button"  data-dismiss="alert"
+        | &times;
+      .message
+        = msg
