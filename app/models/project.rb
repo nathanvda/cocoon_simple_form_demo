@@ -10,5 +10,5 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :people, :reject_if => :all_blank, :allow_destroy => true
   accepts_nested_attributes_for :owner, :reject_if => :all_blank
   accepts_nested_attributes_for :tags
-  accepts_nested_attributes_for :project_tags
+  accepts_nested_attributes_for :project_tags, :allow_destroy => true
 end
