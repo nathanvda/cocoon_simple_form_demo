@@ -10,7 +10,7 @@
       td.done_column
         = f.input :done, :as => :boolean
       td
-        = link_to_remove_association "remove task", f, :confirm => 'do you really want to do this?'
+        = link_to_remove_association "remove task", f, data: {:confirm => 'do you really want to do this?'}
   .sub_tasks
     = f.simple_fields_for :sub_tasks do |sub_task|
       = render 'sub_task_fields', :f => sub_task
