@@ -11,15 +11,15 @@ gem 'uglifier'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-#gem 'cocoon', :path => '../cocoon'
-#gem 'cocoon', :git => 'https://github.com/nathanvda/cocoon'
+# gem 'cocoon', :path => '../cocoon'
+# gem 'cocoon', :git => 'https://github.com/nathanvda/cocoon'
 gem 'cocoon', '~> 1.2.0'
 
 # use master version of simple-form for twitter-bootstrap integration
-gem 'simple_form', '~> 3.1.0rc'
+gem 'simple_form', '~> 3.1.0'
 
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
