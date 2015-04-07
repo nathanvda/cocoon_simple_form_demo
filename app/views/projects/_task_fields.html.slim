@@ -1,16 +1,10 @@
-.nested-fields
-  table
-    tr
-      td
-        = f.input :name, :label => false, :hint => 'name the task' do
-          = f.input_field :name, :hint => 'type the name'
-      td
-        = f.input :description, :label => false, :hint => 'describe the task' do
-          = f.input_field :description, :hint => 'type the name'
-      td.done_column
-        = f.input :done, :as => :boolean
-      td
-        = link_to_remove_association "remove task", f, data: {:confirm => 'do you really want to do this?'}
+.nested-fields.well.well-compact
+  .form-inline
+    = f.input :name, :label => false, :placeholder => 'name the task', class: 'form-control'
+    = f.input :description, :label => false, :placeholder => 'add a description', class: 'form-control'
+    = f.input :done, :as => :boolean
+    = link_to_remove_association f, data: {:confirm => 'do you really want to do this?'}, class: 'btn btn-default btn-xs' do
+      .glyphicon.glyphicon-remove
   .sub_tasks
     = f.simple_fields_for :sub_tasks do |sub_task|
       = render 'sub_task_fields', :f => sub_task

@@ -1,6 +1,7 @@
 .nested-fields
-  fieldset
-    legend SubTask
-    = f.input :name
-    = f.input :description
-    = link_to_remove_association "remove sub-task", f
+  .form-inline
+    b SubTask
+    = f.input :name, placeholder: 'name the subtask', label: false
+    = f.input :description, placeholder: 'add a description', label: false
+    = link_to_remove_association f, class: 'btn btn-default btn-xs' do
+      .glyphicon.glyphicon-remove

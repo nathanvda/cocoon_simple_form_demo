@@ -26,7 +26,8 @@
 td.done_column { width: 80px; }
 
 
-.add_fields, .remove_fields { margin-left: 150px; }
+//.add_fields, .remove_fields { margin-left: 150px; }
+
 #tasks > .nested-fields > table .remove_fields { margin-left: 0px; line-height: 30px; }
 
 #tasks .clearfix { margin-bottom: 2px; }
@@ -40,4 +41,8 @@ td.done_column { width: 80px; }
 
 td .btn {
     margin-left: 3px;
+}
+
+.well.well-compact {
+    margin: 5px;
 }

@@ -1,5 +1,8 @@
 .nested-fields.project-tag-fields
-  #tag_from_list
-    = f.association :tag, collection: Tag.order(:name), prompt: 'Choose an existing tag'
-  = link_to_add_association 'or create a new tag', f, :tag
-  = link_to_remove_association "remove tag", f
+
+  .form-inline
+    .tag_from_list style="display: inline;"
+      = f.association :tag, collection: Tag.order(:name), prompt: 'Choose an existing tag', label: false
+    = link_to_add_association 'or create a new tag', f, :tag, class: 'add-tag'
+    = link_to_remove_association f, class: 'remove-tag btn btn-default btn-xs' do
+      .glyphicon.glyphicon-remove

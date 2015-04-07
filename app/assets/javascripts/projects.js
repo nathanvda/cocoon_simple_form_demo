@@ -20,15 +20,28 @@ $(document).ready(function() {
 
     $('#tags').bind('cocoon:after-insert',
          function(e, tag) {
-             $(".project-tag-fields a.add_fields").
-                 data("association-insertion-position", 'before').
+             console.log('inserting new tag ...');
+             $(".project-tag-fields a.add-tag").
+                 data("association-insertion-position", 'after').
                  data("association-insertion-node", 'this');
-             $('.project-tag-fields').bind('cocoon:after-insert',
+             $(this).find('.project-tag-fields').bind('cocoon:after-insert',
                   function() {
-                    $(this).children("#tag_from_list").remove();
-                    $(this).children("a.add_fields").hide();
+                    console.log('insert new tag ...');
+                    console.log($(this));
+                    $(this).find(".tag_from_list").remove();
+                    $(this).find("a.add_fields").hide();
                   });
          });
+
+    $('.project-tag-fields').bind('cocoon:after-insert',
+        function(e) {
+            console.log('replace OLD tag ...');
+            e.stopPropagation();
+            console.log($(this));
+            $(this).find(".tag_from_list").remove();
+            $(this).find("a.add_fields").hide();
+        });
+
 
     $('#tasks').bind('cocoon:before-insert', function(e,task_to_be_added) {
         console.log(task_to_be_added);
