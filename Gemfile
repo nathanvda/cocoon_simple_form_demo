@@ -1,28 +1,28 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>4.0.1'
+gem 'rails', '~>5.0.1'
 
-gem 'therubyracer'
+# gem 'therubyracer'
 
 # Asset template engines
-gem 'sass-rails'
-gem 'coffee-script'
-gem 'uglifier'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.2'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3'
 
 # gem 'cocoon', :path => '../cocoon'
 # gem 'cocoon', :git => 'https://github.com/nathanvda/cocoon'
 gem 'cocoon', '~> 1.2.0'
 
 # use master version of simple-form for twitter-bootstrap integration
-gem 'simple_form', '~> 3.1.0'
+gem 'simple_form' #, '~> 3.1.0'
 
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.0'
+gem 'turbolinks', '~> 5'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+gem 'puma'
 
 # Deploy with Capistrano
 # gem 'capistrano'
