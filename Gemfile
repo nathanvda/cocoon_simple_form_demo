@@ -43,6 +43,9 @@ gem 'puma'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
+
+gem "rspec-rails", ">= 3.5.0", :group => [:development, :test]
+gem 'rails-controller-testing'
+
 gem "slim"
 gem "slim-rails", :require => false

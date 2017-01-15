@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "projects/new.html.slim" do
   before(:each) do
-    assign(:project, stub_model(Project,
-      :name => "MyString"
-    ).as_new_record)
+    assign(:project, Project.new(name: "MyString"))
   end
 
   it "renders new project form" do
