@@ -1,4 +1,4 @@
-class AddOwnerToProject < ActiveRecord::Migration
+class AddOwnerToProject < ActiveRecord::Migration[5.2]
   def up
     add_column :projects, :owner_id, :integer
   end
