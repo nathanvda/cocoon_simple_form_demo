@@ -1,4 +1,4 @@
-class CreateSubTasks < ActiveRecord::Migration
+class CreateSubTasks < ActiveRecord::Migration[5.2]
   def change
     create_table :sub_tasks do |t|
       t.string :name
