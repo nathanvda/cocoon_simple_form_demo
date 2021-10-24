@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on("page:load turbolinks:load", function() {
     $("#owner a.add_fields").
       data("association-insertion-position", 'before').
       data("association-insertion-node", 'this');
@@ -45,7 +45,13 @@ $(document).ready(function() {
 
     $('#tasks').bind('cocoon:before-insert', function(e,task_to_be_added) {
         console.log(task_to_be_added);
-        task_to_be_added.fadeIn('slow');
+        var confirmation = confirm("Are you sure?");
+
+        if( confirmation === false ) {
+          e.preventDefault();
+        }
+
+        task_to_be_added.fadeIn('slow')
     });
 
     $('#tasks').bind('cocoon:after-insert', function(e, added_task) {
